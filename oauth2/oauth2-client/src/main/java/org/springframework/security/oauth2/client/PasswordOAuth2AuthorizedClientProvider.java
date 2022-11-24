@@ -93,14 +93,14 @@ public final class PasswordOAuth2AuthorizedClientProvider implements OAuth2Autho
 			return null;
 		}
 		if (authorizedClient != null && !hasTokenExpired(authorizedClient.getAccessToken())) {
-			// If client is already authorized and access token is NOT expired than no
+			// If client is already authorized and access token is NOT expired, then no
 			// need for re-authorization
 			return null;
 		}
 		if (authorizedClient != null && hasTokenExpired(authorizedClient.getAccessToken())
 				&& authorizedClient.getRefreshToken() != null) {
 			// If client is already authorized and access token is expired and a refresh
-			// token is available, than return and allow
+			// token is available, then return and allow
 			// RefreshTokenOAuth2AuthorizedClientProvider to handle the refresh
 			return null;
 		}
